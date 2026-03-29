@@ -1,48 +1,1390 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menna Bakir | Data Entry Specialist</title>
-    <style>
-        :root { --primary: #1a365d; --secondary: #2d3748; --accent: #3182ce; --bg: #f7fafc; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--secondary); margin: 0; line-height: 1.6; }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        header { text-align: center; border-bottom: 2px solid var(--accent); padding-bottom: 20px; margin-bottom: 30px; }
-        h1 { color: var(--primary); margin: 0; font-size: 2.5em; }
-        .lang-section { margin-bottom: 40px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .en { direction: ltr; text-align: left; border-left: 4px solid var(--accent); padding-left: 15px; margin-bottom: 20px; }
-        .ar { direction: rtl; text-align: right; border-right: 4px solid var(--accent); padding-right: 15px; }
-        .skills-list { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; justify-content: center; }
-        .skills-list li { background: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; }
-        .contact-btn { display: block; width: 200px; margin: 20px auto; padding: 12px; background: var(--accent); color: white; text-align: center; text-decoration: none; border-radius: 5px; font-weight: bold; }
-        .contact-btn:hover { background: var(--primary); }
-    </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Menna Bakir — Data Entry & Content Management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cairo:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+/* ════════════════════════════════════════
+   CSS VARIABLES & RESET
+════════════════════════════════════════ */
+:root{
+  --navy:#0d1b2a;
+  --navy2:#162032;
+  --navy3:#1e2d40;
+  --gold:#b8973a;
+  --gold2:#d4af5a;
+  --gold3:#f0d080;
+  --white:#ffffff;
+  --off:#f7f5f0;
+  --off2:#ede9e0;
+  --text:#1a2535;
+  --muted:#6b7a8d;
+  --light:#9aabb8;
+  --border:#ddd8ce;
+  --serif:'Cormorant Garamond',serif;
+  --sans:'Cairo',sans-serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(13,27,42,.10);
+  --shadow-lg:0 12px 48px rgba(13,27,42,.18);
+  --radius:4px;
+  --transition:.28s ease;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--white);color:var(--text);
+  font-family:var(--sans);font-size:16px;line-height:1.7;
+  overflow-x:hidden;
+}
+
+/* ── BILINGUAL HELPERS ── */
+.en{display:block;direction:ltr;text-align:left;font-family:var(--serif)}
+.ar{display:block;direction:rtl;text-align:right;font-family:var(--sans)}
+.en-b{display:block;direction:ltr;text-align:left;font-family:var(--sans)}
+.ar-b{display:block;direction:rtl;text-align:right;font-family:var(--sans)}
+.rule{display:block;width:32px;height:1px;background:var(--gold);opacity:.4;margin:.4rem 0}
+.rule.c{margin:.4rem auto}
+.rule.r{margin-left:auto}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--off)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:4px}
+
+/* ════════════════════════════════════════
+   NAV
+════════════════════════════════════════ */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem 4rem;
+  background:transparent;
+  border-bottom:1px solid transparent;
+  transition:background var(--transition),border-color var(--transition),box-shadow var(--transition);
+}
+#nav.solid{
+  background:rgba(255,255,255,.97);
+  border-color:var(--border);
+  box-shadow:var(--shadow);
+}
+.nav-brand{
+  display:flex;flex-direction:column;
+  text-decoration:none;
+}
+.nav-brand .nb-en{
+  font-family:var(--serif);font-size:1.25rem;font-weight:700;
+  color:var(--navy);letter-spacing:.04em;line-height:1.1;
+}
+.nav-brand .nb-ar{
+  font-family:var(--sans);font-size:.72rem;font-weight:500;
+  color:var(--gold);letter-spacing:.08em;direction:rtl;
+}
+.nav-links{
+  display:flex;gap:2rem;list-style:none;align-items:center;
+}
+.nav-links a{
+  text-decoration:none;color:var(--navy);font-size:.8rem;
+  font-family:var(--sans);font-weight:500;letter-spacing:.04em;
+  transition:color var(--transition);position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-3px;left:0;right:0;
+  height:1px;background:var(--gold);transform:scaleX(0);
+  transition:transform var(--transition);
+}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-hire{
+  background:var(--navy)!important;color:var(--white)!important;
+  padding:.45rem 1.3rem;border-radius:var(--radius);
+  font-family:var(--mono)!important;font-size:.7rem!important;
+  letter-spacing:.1em;text-transform:uppercase;
+  transition:background var(--transition),transform var(--transition)!important;
+}
+.nav-hire::after{display:none!important}
+.nav-hire:hover{background:var(--gold)!important;transform:translateY(-1px)}
+
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:.3rem}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--navy);transition:var(--transition)}
+
+/* mobile menu */
+.mob-menu{
+  display:none;position:fixed;inset:0;
+  background:var(--navy);z-index:199;
+  flex-direction:column;align-items:center;justify-content:center;gap:2rem;
+}
+.mob-menu.open{display:flex}
+.mob-menu a{
+  text-decoration:none;color:var(--white);
+  font-family:var(--sans);font-size:1.4rem;font-weight:600;
+  transition:color var(--transition);
+}
+.mob-menu a:hover{color:var(--gold)}
+.mob-close{
+  position:absolute;top:1.5rem;right:1.5rem;
+  background:none;border:none;color:var(--light);
+  font-size:1.5rem;cursor:pointer;
+}
+
+/* ════════════════════════════════════════
+   HERO
+════════════════════════════════════════ */
+#hero{
+  min-height:100vh;
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 55%,var(--navy3) 100%);
+  display:flex;align-items:center;
+  padding:8rem 4rem 4rem;
+  position:relative;overflow:hidden;
+}
+/* geometric accents */
+#hero::before{
+  content:'';position:absolute;
+  width:500px;height:500px;border-radius:50%;
+  border:1px solid rgba(184,151,58,.12);
+  top:-100px;right:-100px;
+}
+#hero::after{
+  content:'';position:absolute;
+  width:300px;height:300px;border-radius:50%;
+  border:1px solid rgba(184,151,58,.08);
+  bottom:50px;left:-50px;
+}
+.hero-grid{
+  max-width:1200px;margin:0 auto;width:100%;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:4rem;align-items:center;position:relative;z-index:1;
+}
+/* LEFT — English */
+.hero-left{}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:var(--mono);font-size:.68rem;color:var(--gold2);
+  letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.8rem;
+}
+.hero-badge::before{content:'';display:block;width:24px;height:1px;background:var(--gold)}
+.hero-title-en{
+  font-family:var(--serif);
+  font-size:clamp(2.4rem,4.5vw,4.2rem);
+  font-weight:700;line-height:1.1;
+  color:var(--white);margin-bottom:.5rem;
+}
+.hero-title-en em{font-style:italic;color:var(--gold2)}
+.hero-sub-en{
+  font-size:.95rem;color:rgba(255,255,255,.65);
+  line-height:1.85;margin-bottom:2.5rem;max-width:420px;
+  font-family:var(--sans);
+}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{
+  display:inline-block;text-decoration:none;
+  background:var(--gold);color:var(--navy);
+  font-family:var(--mono);font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:.9rem 2rem;border-radius:var(--radius);
+  transition:background var(--transition),transform var(--transition),box-shadow var(--transition);
+  font-weight:500;
+}
+.btn-primary:hover{background:var(--gold3);transform:translateY(-2px);box-shadow:0 6px 20px rgba(184,151,58,.35)}
+.btn-outline{
+  display:inline-block;text-decoration:none;
+  border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);
+  font-family:var(--mono);font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:.9rem 2rem;border-radius:var(--radius);
+  transition:border-color var(--transition),color var(--transition),transform var(--transition);
+}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+
+/* RIGHT — Arabic */
+.hero-right{text-align:right;direction:rtl}
+.hero-badge-ar{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:var(--sans);font-size:.72rem;color:var(--gold2);
+  letter-spacing:.1em;margin-bottom:1.8rem;
+}
+.hero-badge-ar::before{content:'';display:block;width:24px;height:1px;background:var(--gold)}
+.hero-title-ar{
+  font-family:var(--sans);
+  font-size:clamp(1.6rem,3vw,2.8rem);
+  font-weight:700;line-height:1.25;
+  color:var(--white);margin-bottom:.5rem;opacity:.92;
+}
+.hero-title-ar em{font-style:normal;color:var(--gold2)}
+.hero-sub-ar{
+  font-size:.9rem;color:rgba(255,255,255,.6);
+  line-height:1.9;margin-bottom:2.5rem;
+  font-family:var(--sans);font-weight:300;
+}
+.hero-ctas-ar{display:flex;gap:1rem;flex-wrap:wrap;justify-content:flex-end}
+
+/* divider bar between EN/AR in hero */
+.hero-vdivider{
+  width:1px;height:100%;background:rgba(255,255,255,.1);
+  position:absolute;left:50%;top:0;display:none;
+}
+
+/* hero stats */
+.hero-stats{
+  grid-column:1/-1;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(255,255,255,.1);
+  margin-top:1rem;padding-top:2rem;gap:0;
+}
+.hstat{padding:0 1.5rem;border-right:1px solid rgba(255,255,255,.1)}
+.hstat:first-child{padding-left:0}
+.hstat:last-child{border-right:none}
+.hstat-num{font-family:var(--mono);font-size:2rem;color:var(--gold2);font-weight:500;display:block;line-height:1}
+.hstat-en{font-size:.72rem;color:rgba(255,255,255,.5);margin-top:.3rem}
+.hstat-ar{font-size:.68rem;color:rgba(255,255,255,.35);direction:rtl;text-align:right;font-family:var(--sans)}
+
+/* ════════════════════════════════════════
+   SECTION COMMONS
+════════════════════════════════════════ */
+.section{padding:6rem 4rem;position:relative}
+.section.alt{background:var(--off)}
+.section-inner{max-width:1200px;margin:0 auto}
+
+.sh{/* section header */margin-bottom:3.5rem}
+.sh-tag{
+  font-family:var(--mono);font-size:.65rem;color:var(--gold);
+  letter-spacing:.25em;text-transform:uppercase;
+  display:flex;align-items:center;gap:.8rem;margin-bottom:.9rem;
+}
+.sh-tag::after{content:'';flex:1;height:1px;background:var(--border);max-width:70px}
+.sh-title-en{
+  font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);
+  font-weight:700;color:var(--navy);line-height:1.15;
+  direction:ltr;text-align:left;margin-bottom:.25rem;
+}
+.sh-title-ar{
+  font-family:var(--sans);font-size:clamp(1.1rem,2vw,1.7rem);
+  font-weight:700;color:var(--navy);
+  direction:rtl;text-align:right;opacity:.75;margin-bottom:1rem;
+}
+.sh-desc-pair{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;
+}
+.sh-desc-en{font-size:.88rem;color:var(--muted);line-height:1.8;direction:ltr;text-align:left}
+.sh-desc-ar{font-size:.88rem;color:var(--muted);line-height:1.85;direction:rtl;text-align:right;font-family:var(--sans)}
+
+/* ── FADE UP ── */
+.fu{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.fu.vis{opacity:1;transform:translateY(0)}
+
+/* ════════════════════════════════════════
+   SERVICES
+════════════════════════════════════════ */
+#services{background:var(--white)}
+.services-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:1.5rem;
+}
+.scard{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:2rem 1.6rem;
+  position:relative;overflow:hidden;
+  transition:transform var(--transition),box-shadow var(--transition),border-color var(--transition);
+}
+.scard::before{
+  content:'';position:absolute;top:0;left:0;right:0;
+  height:3px;background:linear-gradient(90deg,var(--gold),var(--gold3));
+  transform:scaleX(0);transition:transform .4s ease;
+}
+.scard:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:var(--gold2)}
+.scard:hover::before{transform:scaleX(1)}
+.scard-icon{
+  font-size:2rem;margin-bottom:1.2rem;display:block;
+  width:52px;height:52px;display:flex;align-items:center;justify-content:center;
+  background:var(--off);border-radius:50%;
+  transition:background var(--transition);
+}
+.scard:hover .scard-icon{background:rgba(184,151,58,.12)}
+.sc-num{font-family:var(--mono);font-size:.6rem;color:var(--light);letter-spacing:.2em;margin-bottom:.6rem}
+.sc-title-en{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--navy);direction:ltr;text-align:left;margin-bottom:.15rem}
+.sc-title-ar{font-family:var(--sans);font-size:.9rem;font-weight:600;color:var(--navy);direction:rtl;text-align:right;opacity:.7;margin-bottom:.7rem}
+.sc-desc-en{font-size:.78rem;color:var(--muted);line-height:1.75;direction:ltr;text-align:left;margin-bottom:.18rem}
+.sc-desc-ar{font-size:.78rem;color:var(--muted);line-height:1.8;direction:rtl;text-align:right;font-family:var(--sans)}
+
+/* ════════════════════════════════════════
+   WHY ME
+════════════════════════════════════════ */
+#why{background:var(--navy)}
+#why .sh-title-en,#why .sh-title-ar{color:var(--white)}
+#why .sh-tag{color:var(--gold2)}
+#why .sh-tag::after{background:rgba(255,255,255,.15)}
+#why .sh-desc-en,#why .sh-desc-ar{color:rgba(255,255,255,.5)}
+
+.why-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;
+}
+.why-points{display:flex;flex-direction:column;gap:1.4rem}
+.why-item{display:flex;gap:1rem;align-items:flex-start}
+.why-bullet{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--gold);flex-shrink:0;margin-top:.55rem;
+}
+.wi-en-s{display:block;font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--white);direction:ltr;text-align:left;margin-bottom:.12rem}
+.wi-ar-s{display:block;font-family:var(--sans);font-size:.82rem;font-weight:600;color:var(--white);direction:rtl;text-align:right;opacity:.7;margin-bottom:.25rem}
+.wi-en-p{font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.75;direction:ltr;text-align:left;margin-bottom:.15rem}
+.wi-ar-p{font-size:.78rem;color:rgba(255,255,255,.4);line-height:1.8;direction:rtl;text-align:right;font-family:var(--sans)}
+
+.why-box{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-top:3px solid var(--gold);
+  padding:2.5rem;
+}
+.why-box-num{
+  font-family:var(--mono);font-size:3.5rem;
+  color:var(--gold);font-weight:500;line-height:1;
+  margin-bottom:.5rem;display:block;
+}
+.why-box-label-en{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:.2rem}
+.why-box-label-ar{font-family:var(--sans);font-size:1rem;font-weight:600;color:var(--white);direction:rtl;text-align:right;opacity:.65;margin-bottom:1.8rem}
+
+.skill-bar{margin-top:1rem}
+.sb-label{
+  display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:.63rem;color:rgba(255,255,255,.5);margin-bottom:.4rem;
+}
+.sb-track{height:2px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden}
+.sb-fill{
+  height:100%;background:linear-gradient(90deg,var(--gold),var(--gold3));
+  border-radius:2px;animation:sbfill 1.6s ease forwards;
+}
+@keyframes sbfill{from{width:0}}
+
+/* ════════════════════════════════════════
+   PORTFOLIO
+════════════════════════════════════════ */
+#portfolio{background:var(--off)}
+.portfolio-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:2rem;
+}
+.pcard{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;
+  transition:transform var(--transition),box-shadow var(--transition);
+}
+.pcard:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.pcard-thumb{
+  height:160px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:3rem;position:relative;overflow:hidden;
+}
+.pcard-thumb.navy{background:var(--navy)}
+.pcard-thumb.gold{background:linear-gradient(135deg,var(--navy2),var(--navy3))}
+.pcard-thumb.light{background:var(--off2)}
+.pcard-thumb-label{
+  position:absolute;bottom:.8rem;right:.8rem;
+  font-family:var(--mono);font-size:.6rem;color:rgba(255,255,255,.5);
+  letter-spacing:.15em;text-transform:uppercase;
+}
+.pcard-thumb.light .pcard-thumb-label{color:var(--muted)}
+.pcard-body{padding:1.6rem}
+.pc-tag{
+  font-family:var(--mono);font-size:.6rem;color:var(--gold);
+  letter-spacing:.18em;text-transform:uppercase;margin-bottom:.7rem;
+}
+.pc-title-en{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--navy);direction:ltr;text-align:left;margin-bottom:.15rem}
+.pc-title-ar{font-family:var(--sans);font-size:.9rem;font-weight:600;color:var(--navy);direction:rtl;text-align:right;opacity:.7;margin-bottom:.7rem}
+.pc-desc-en{font-size:.78rem;color:var(--muted);line-height:1.75;direction:ltr;text-align:left;margin-bottom:.15rem}
+.pc-desc-ar{font-size:.78rem;color:var(--muted);line-height:1.8;direction:rtl;text-align:right;font-family:var(--sans);margin-bottom:1.2rem}
+.pc-pills{display:flex;flex-wrap:wrap;gap:.4rem}
+.pc-pill{
+  font-family:var(--mono);font-size:.6rem;color:var(--navy);
+  background:var(--off2);border:1px solid var(--border);
+  padding:.2rem .6rem;border-radius:2px;letter-spacing:.08em;
+}
+
+/* ════════════════════════════════════════
+   TESTIMONIALS
+════════════════════════════════════════ */
+#testimonials{background:var(--white)}
+.tgrid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1.5rem;
+}
+.tcard{
+  background:var(--off);border:1px solid var(--border);
+  border-radius:var(--radius);padding:2rem 1.8rem;
+  position:relative;
+  transition:transform var(--transition),box-shadow var(--transition);
+}
+.tcard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.tcard-quote{
+  font-size:3rem;color:var(--gold2);opacity:.3;
+  font-family:var(--serif);line-height:1;
+  position:absolute;top:1rem;left:1.5rem;
+}
+.tc-en{
+  font-family:var(--serif);font-style:italic;
+  font-size:.95rem;color:var(--text);line-height:1.7;
+  direction:ltr;text-align:left;margin-bottom:.4rem;padding-top:1rem;
+}
+.tc-ar{
+  font-family:var(--sans);font-size:.85rem;
+  color:var(--muted);line-height:1.8;
+  direction:rtl;text-align:right;margin-bottom:1.4rem;
+}
+.tc-author{
+  display:flex;align-items:center;gap:.8rem;
+  border-top:1px solid var(--border);padding-top:1rem;
+}
+.tc-avatar{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--navy);display:flex;align-items:center;justify-content:center;
+  color:var(--gold2);font-family:var(--mono);font-size:.7rem;font-weight:500;
+  flex-shrink:0;
+}
+.tc-name-en{font-family:var(--serif);font-size:.85rem;font-weight:700;color:var(--navy)}
+.tc-role-en{font-family:var(--mono);font-size:.62rem;color:var(--muted);letter-spacing:.1em}
+
+/* ════════════════════════════════════════
+   RESUME / CV
+════════════════════════════════════════ */
+#resume{background:var(--off)}
+.resume-layout{
+  display:grid;grid-template-columns:1fr 1.3fr;gap:4rem;align-items:start;
+}
+/* left col */
+.resume-left{}
+.rv-label{
+  font-family:var(--mono);font-size:.62rem;color:var(--gold);
+  letter-spacing:.2em;text-transform:uppercase;margin-bottom:1rem;
+  display:flex;align-items:center;gap:.6rem;
+}
+.rv-label::after{content:'';flex:1;height:1px;background:var(--border)}
+
+.profile-block{
+  background:var(--navy);padding:2rem;border-radius:var(--radius);
+  margin-bottom:2rem;text-align:center;
+}
+.pb-avatar{
+  width:80px;height:80px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold3));
+  margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--navy);
+}
+.pb-name-en{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--white)}
+.pb-name-ar{font-family:var(--sans);font-size:1rem;font-weight:600;color:rgba(255,255,255,.6);direction:rtl;margin-bottom:.5rem}
+.pb-title-en{font-family:var(--mono);font-size:.65rem;color:var(--gold2);letter-spacing:.15em;text-transform:uppercase}
+.pb-title-ar{font-family:var(--sans);font-size:.7rem;color:rgba(255,255,255,.4);margin-top:.2rem;direction:rtl}
+
+.contact-info-list{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--radius);padding:1.5rem;margin-bottom:2rem;
+}
+.ci-item{
+  display:flex;align-items:flex-start;gap:.8rem;
+  padding:.6rem 0;border-bottom:1px solid var(--border);
+}
+.ci-item:last-child{border-bottom:none}
+.ci-icon{
+  width:28px;height:28px;background:var(--off);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.75rem;flex-shrink:0;color:var(--gold);
+}
+.ci-item a{text-decoration:none}
+.ci-item a:hover .ci-val{color:var(--gold)}
+.ci-lbl{font-family:var(--mono);font-size:.6rem;color:var(--light);letter-spacing:.12em;text-transform:uppercase}
+.ci-val{font-family:var(--sans);font-size:.78rem;color:var(--text);word-break:break-all}
+
+.skills-block{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem}
+.skill-item{margin-bottom:1rem}
+.skill-item:last-child{margin-bottom:0}
+.skill-top{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.65rem;color:var(--muted);margin-bottom:.35rem}
+.s-track{height:3px;background:var(--off2);border-radius:2px;overflow:hidden}
+.s-fill{height:100%;background:linear-gradient(90deg,var(--navy),var(--gold));border-radius:2px;animation:sbfill 1.6s ease forwards}
+
+/* right col — timeline */
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{
+  display:grid;grid-template-columns:120px 1fr;
+  gap:1.5rem;padding:1.5rem 0;
+  border-bottom:1px solid var(--border);
+  align-items:start;
+}
+.tl-item:last-child{border-bottom:none}
+.tl-period{font-family:var(--mono);font-size:.65rem;color:var(--gold);letter-spacing:.1em;padding-top:.25rem}
+.tl-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--gold);flex-shrink:0;margin-top:.4rem;
+  box-shadow:0 0 0 3px rgba(184,151,58,.15);
+}
+.tl-body{}
+.tl-title-en{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.15rem}
+.tl-title-ar{font-family:var(--sans);font-size:.85rem;font-weight:600;color:var(--navy);direction:rtl;text-align:right;opacity:.7;margin-bottom:.3rem}
+.tl-org{font-family:var(--mono);font-size:.65rem;color:var(--gold);letter-spacing:.1em;margin-bottom:.5rem}
+.tl-desc-en{font-size:.8rem;color:var(--muted);line-height:1.75;margin-bottom:.15rem}
+.tl-desc-ar{font-size:.8rem;color:var(--muted);line-height:1.8;direction:rtl;text-align:right;font-family:var(--sans)}
+
+/* ════════════════════════════════════════
+   CONTACT
+════════════════════════════════════════ */
+#contact{background:var(--navy)}
+#contact .sh-title-en,#contact .sh-title-ar{color:var(--white)}
+#contact .sh-tag{color:var(--gold2)}
+#contact .sh-tag::after{background:rgba(255,255,255,.15)}
+#contact .sh-desc-en,#contact .sh-desc-ar{color:rgba(255,255,255,.5)}
+#contact .rule{opacity:.25}
+
+.contact-layout{
+  display:grid;grid-template-columns:1fr 1.5fr;gap:4rem;align-items:start;
+}
+.contact-channels{display:flex;flex-direction:column;gap:1rem}
+.channel-card{
+  display:flex;align-items:center;gap:1rem;
+  text-decoration:none;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--radius);
+  padding:1.1rem 1.4rem;
+  transition:background var(--transition),border-color var(--transition),transform var(--transition);
+}
+.channel-card:hover{
+  background:rgba(255,255,255,.09);
+  border-color:var(--gold);
+  transform:translateX(4px);
+}
+.ch-icon{
+  width:40px;height:40px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;background:rgba(255,255,255,.08);
+  font-size:1.1rem;flex-shrink:0;
+}
+.ch-label-en{display:block;color:var(--white);font-size:.82rem;font-weight:600;font-family:var(--sans)}
+.ch-label-ar{display:block;color:rgba(255,255,255,.45);font-size:.72rem;font-family:var(--sans);direction:rtl;text-align:right}
+.ch-val{display:block;font-family:var(--mono);font-size:.65rem;color:var(--gold2);letter-spacing:.06em;margin-top:.1rem;word-break:break-all}
+
+/* form */
+.cform{display:flex;flex-direction:column;gap:1rem}
+.cform-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.cform-group{display:flex;flex-direction:column;gap:.35rem}
+.cform-group label{font-family:var(--mono);font-size:.6rem;color:rgba(255,255,255,.45);letter-spacing:.15em;text-transform:uppercase}
+.cform-group input,
+.cform-group textarea,
+.cform-group select{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.12);
+  color:var(--white);font-family:var(--sans);font-size:.85rem;
+  padding:.8rem 1rem;border-radius:var(--radius);outline:none;
+  transition:border-color var(--transition);width:100%;
+}
+.cform-group input:focus,
+.cform-group textarea:focus,
+.cform-group select:focus{border-color:var(--gold)}
+.cform-group input::placeholder,
+.cform-group textarea::placeholder{color:rgba(255,255,255,.2)}
+.cform-group textarea{resize:vertical;min-height:120px}
+.cform-group select option{background:var(--navy2)}
+.cform-submit{
+  align-self:flex-start;
+  background:var(--gold);color:var(--navy);
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;
+  border:none;padding:1rem 2.2rem;border-radius:var(--radius);
+  cursor:pointer;transition:background var(--transition),transform var(--transition);font-weight:500;
+}
+.cform-submit:hover{background:var(--gold3);transform:translateY(-2px)}
+
+/* ════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════ */
+footer{
+  background:var(--navy2);
+  border-top:1px solid rgba(255,255,255,.06);
+  padding:3rem 4rem 2rem;
+}
+.footer-top{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  flex-wrap:wrap;gap:2rem;padding-bottom:2rem;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.footer-brand .fb-name{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--white)}
+.footer-brand .fb-ar{font-family:var(--sans);font-size:.72rem;color:var(--gold);direction:rtl}
+.footer-brand .fb-desc{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:.5rem;max-width:240px}
+
+.footer-nav{display:flex;flex-direction:column;gap:.5rem}
+.footer-nav-title{font-family:var(--mono);font-size:.6rem;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.5rem}
+.footer-nav a{text-decoration:none;font-size:.78rem;color:rgba(255,255,255,.5);transition:color var(--transition)}
+.footer-nav a:hover{color:var(--gold)}
+
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:1rem;padding-top:1.5rem;
+}
+.footer-copy{font-family:var(--mono);font-size:.62rem;color:rgba(255,255,255,.3);letter-spacing:.08em}
+.footer-copy-ar{font-family:var(--sans);font-size:.65rem;color:rgba(255,255,255,.25);direction:rtl}
+
+/* ════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════ */
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .hero-stats{grid-template-columns:repeat(4,1fr)}
+  .resume-layout{grid-template-columns:1fr}
+  .contact-layout{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  #nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero{padding:7rem 1.5rem 3rem}
+  .section{padding:4rem 1.5rem}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  footer{padding:2.5rem 1.5rem}
+  .footer-top{flex-direction:column}
+  .cform-row{grid-template-columns:1fr}
+  .sh-desc-pair{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .portfolio-grid{grid-template-columns:1fr}
+  .tgrid{grid-template-columns:1fr}
+  .tl-item{grid-template-columns:80px 1fr;gap:1rem}
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Menna Bakir | منة بكير</h1>
-            <p>Data Entry Specialist | متخصصة إدخال بيانات</p>
-        </header>
 
-        <section class="lang-section">
-            <div class="en">
-                <h3>About Me</h3>
-                <p> Bachelor’s Degree in Business Administration from the Faculty of Commerce, Ain Shams University. Expert in data organization with 100% accuracy and strict technical methodology.</p>
-            </div>
-            <div class="ar">
-                <h3>نبذة عني</h3>
-                <p>حاصلة على بكالوريوس إدارة الأعمال من كلية التجارة جامعة عين شمس. خبيرة في تنظيم البيانات بدقة 100% ومنهجية تقنية صارمة لضمان جودة العمل.</p>
-            </div>
-        </section>
+<!-- ════════ MOBILE MENU ════════ -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" onclick="closeMob()">✕</button>
+  <a href="#hero" onclick="closeMob()">Home · الرئيسية</a>
+  <a href="#services" onclick="closeMob()">Services · الخدمات</a>
+  <a href="#why" onclick="closeMob()">Why Me · لماذا أنا</a>
+  <a href="#portfolio" onclick="closeMob()">Portfolio · أعمالي</a>
+  <a href="#resume" onclick="closeMob()">Resume · السيرة</a>
+  <a href="#contact" onclick="closeMob()">Contact · تواصل</a>
+</div>
 
-      
+<!-- ════════ NAV ════════ -->
+<nav id="nav">
+  <a href="#hero" class="nav-brand">
+    <span class="nb-en">Menna Bakir</span>
+    <span class="nb-ar">منة بكير</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services · الخدمات</a></li>
+    <li><a href="#why">Why Me · لماذا أنا</a></li>
+    <li><a href="#portfolio">Portfolio · أعمالي</a></li>
+    <li><a href="#resume">Resume · السيرة</a></li>
+    <li><a href="#contact">Contact · تواصل</a></li>
+    <li><a href="mailto:Mennabakeer24@gmail.com" class="nav-hire">Hire Me · وظّفني</a></li>
+  </ul>
+  <button class="hamburger" onclick="openMob()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-        <section style="text-align: center;">
-            <a href="https://www.linkedin.com" class="contact-btn">LinkedIn Profile</a>
-            <p>Email: <a href="mailto:Mennabakeer24@gmail.com">Mennabakeer24@gmail.com</a></p>
-        </section>
+<!-- ════════ HERO ════════ -->
+<section id="hero">
+  <div class="hero-grid">
+
+    <!-- English Left -->
+    <div class="hero-left fu">
+      <div class="hero-badge">Available for Projects</div>
+      <h1 class="hero-title-en">
+        Data, organised.<br/>
+        <em>Accuracy, guaranteed.</em>
+      </h1>
+      <p class="hero-sub-en">
+        I'm Menna Bakir — a Business Administration graduate delivering
+        precision data entry, content management, and digital organisation
+        solutions with zero tolerance for error.
+      </p>
+      <div class="hero-ctas">
+        <a href="mailto:Mennabakeer24@gmail.com" class="btn-primary">✉ Hire Me</a>
+        <a href="https://www.linkedin.com/in/menna-bakir-0a8465169" target="_blank" class="btn-outline">LinkedIn Profile →</a>
+      </div>
     </div>
+
+    <!-- Arabic Right -->
+    <div class="hero-right fu">
+      <div class="hero-badge-ar">متاحة للمشاريع</div>
+      <h1 class="hero-title-ar">
+        بيانات منظّمة.<br/>
+        <em>دقة مضمونة.</em>
+      </h1>
+      <p class="hero-sub-ar">
+        أنا منة بكير — خريجة إدارة أعمال أقدّم خدمات إدخال البيانات وإدارة المحتوى الرقمي
+        والتنظيم الاحترافي بدقة لا تقبل الخطأ.
+      </p>
+      <div class="hero-ctas-ar">
+        <a href="mailto:Mennabakeer24@gmail.com" class="btn-primary">✉ وظّفني</a>
+        <a href="https://www.linkedin.com/in/menna-bakir-0a8465169" target="_blank" class="btn-outline">LinkedIn ←</a>
+      </div>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="hero-stats fu">
+      <div class="hstat">
+        <span class="hstat-num">100%</span>
+        <div class="hstat-en">Delivery Accuracy</div>
+        <div class="hstat-ar">دقة في التسليم</div>
+      </div>
+      <div class="hstat">
+        <span class="hstat-num">48h</span>
+        <div class="hstat-en">Max Response Time</div>
+        <div class="hstat-ar">أقصى وقت استجابة</div>
+      </div>
+      <div class="hstat">
+        <span class="hstat-num">0</span>
+        <div class="hstat-en">Error Tolerance</div>
+        <div class="hstat-ar">هامش خطأ مقبول</div>
+      </div>
+      <div class="hstat">
+        <span class="hstat-num">B.Sc.</span>
+        <div class="hstat-en">Business Admin</div>
+        <div class="hstat-ar">إدارة أعمال</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════ SERVICES ════════ -->
+<section id="services" class="section">
+  <div class="section-inner">
+    <div class="sh fu">
+      <div class="sh-tag">Services · الخدمات</div>
+      <div class="sh-title-en">What I Deliver</div>
+      <span class="rule"></span>
+      <div class="sh-title-ar">ما أقدّمه لك</div>
+      <div class="sh-desc-pair">
+        <div class="sh-desc-en">Five focused services built on precision, speed, and a business-educated eye for detail — every output fully documented and verified.</div>
+        <div class="sh-desc-ar">خمس خدمات متخصصة مبنية على الدقة والسرعة وعين تجارية تلاحظ التفاصيل — كل مخرج موثّق ومراجَع بالكامل.</div>
+      </div>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="scard fu">
+        <div class="scard-icon">📊</div>
+        <div class="sc-num">01</div>
+        <div class="sc-title-en">Data Entry & Cleaning</div>
+        <span class="rule"></span>
+        <div class="sc-title-ar">إدخال البيانات وتنقيتها</div>
+        <div class="sc-desc-en">Fast, verified input into spreadsheets and databases with duplicate removal and format unification.</div>
+        <span class="rule"></span>
+        <div class="sc-desc-ar">إدخال سريع وموثّق في الجداول وقواعد البيانات مع إزالة التكرار وتوحيد التنسيق.</div>
+      </div>
+
+      <div class="scard fu">
+        <div class="scard-icon">📁</div>
+        <div class="sc-num">02</div>
+        <div class="sc-title-en">Digital Content Management</div>
+        <span class="rule"></span>
+        <div class="sc-title-ar">إدارة المحتوى الرقمي</div>
+        <div class="sc-desc-en">Organise, schedule and publish across platforms with a scalable, consistent taxonomy system.</div>
+        <span class="rule"></span>
+        <div class="sc-desc-ar">تنظيم وجدولة ونشر المحتوى عبر المنصات بنظام تصنيف متسق وقابل للتوسع.</div>
+      </div>
+
+      <div class="scard fu">
+        <div class="scard-icon">🔍</div>
+        <div class="sc-num">03</div>
+        <div class="sc-title-en">Research & Data Collection</div>
+        <span class="rule"></span>
+        <div class="sc-title-ar">البحث وجمع البيانات</div>
+        <div class="sc-desc-en">Multi-source data gathering with concise, decision-ready summaries for business and market needs.</div>
+        <span class="rule"></span>
+        <div class="sc-desc-ar">جمع البيانات من مصادر متعددة مع ملخصات موجزة جاهزة للقرار لاحتياجات الأعمال والسوق.</div>
+      </div>
+
+      <div class="scard fu">
+        <div class="scard-icon">📄</div>
+        <div class="sc-num">04</div>
+        <div class="sc-title-en">Reporting & Documentation</div>
+        <span class="rule"></span>
+        <div class="sc-title-ar">التقارير والتوثيق</div>
+        <div class="sc-desc-en">Structured internal reports, SOPs, and documentation that help teams take data-backed decisions.</div>
+        <span class="rule"></span>
+        <div class="sc-desc-ar">تقارير داخلية منظّمة وSOP وتوثيق يساعد الفرق على اتخاذ قرارات مبنية على البيانات.</div>
+      </div>
+
+      <div class="scard fu">
+        <div class="scard-icon">⚙️</div>
+        <div class="sc-num">05</div>
+        <div class="sc-title-en">CRM & Spreadsheet Operations</div>
+        <span class="rule"></span>
+        <div class="sc-title-ar">عمليات CRM والجداول</div>
+        <div class="sc-desc-en">Managing and updating CRM platforms, Excel/Sheets pipelines and Airtable/Notion workspaces with systematic accuracy.</div>
+        <span class="rule"></span>
+        <div class="sc-desc-ar">إدارة وتحديث منصات CRM وخطوط Excel/Sheets ومساحات Airtable/Notion بدقة منهجية.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════ WHY ME ════════ -->
+<section id="why" class="section">
+  <div class="section-inner">
+    <div class="sh fu">
+      <div class="sh-tag">Why Me · لماذا أنا</div>
+      <div class="sh-title-en">The Difference Is in the Details</div>
+      <span class="rule" style="opacity:.25"></span>
+      <div class="sh-title-ar">الفرق في التفاصيل</div>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-points fu">
+
+        <div class="why-item">
+          <div class="why-bullet"></div>
+          <div>
+            <span class="wi-en-s">Business Management Foundation</span>
+            <span class="wi-ar-s">خلفية أكاديمية في إدارة الأعمال</span>
+            <p class="wi-en-p">A B.Sc. from Ain Shams University means I read your data through a commercial lens — understanding impact, not just executing tasks.</p>
+            <span class="rule" style="opacity:.2"></span>
+            <p class="wi-ar-p">بكالوريوس من جامعة عين شمس يعني أفهم بياناتك من منظور تجاري — أدرك الأثر، لا أنفّذ المهمة فحسب.</p>
+          </div>
+        </div>
+
+        <div class="why-item">
+          <div class="why-bullet"></div>
+          <div>
+            <span class="wi-en-s">Zero Tolerance for Error</span>
+            <span class="wi-ar-s">صفر تساهل في الدقة</span>
+            <p class="wi-en-p">Every entry is double-verified. Nothing is submitted until I'm 100% confident — because one wrong cell in a large dataset costs everything.</p>
+            <span class="rule" style="opacity:.2"></span>
+            <p class="wi-ar-p">كل إدخال يُراجَع مرتين. لا أُسلّم شيئاً حتى أكون مطمئنة 100% — لأن خلية خاطئة واحدة في بيانات ضخمة تُكلّف الكثير.</p>
+          </div>
+        </div>
+
+        <div class="why-item">
+          <div class="why-bullet"></div>
+          <div>
+            <span class="wi-en-s">Transparent Communication</span>
+            <span class="wi-ar-s">تواصل شفاف بلا انتظار</span>
+            <p class="wi-en-p">You'll never wonder where the project stands. Structured progress updates — always, without being asked.</p>
+            <span class="rule" style="opacity:.2"></span>
+            <p class="wi-ar-p">لن تتساءل أين وصل المشروع. تحديثات منتظمة ومنظّمة — دائماً، بدون أن تطلب.</p>
+          </div>
+        </div>
+
+        <div class="why-item">
+          <div class="why-bullet"></div>
+          <div>
+            <span class="wi-en-s">Speed Meets Structure</span>
+            <span class="wi-ar-s">السرعة مع البنية</span>
+            <p class="wi-en-p">I build systematic workflows that accelerate delivery without ever trading off on accuracy. Fast AND reliable — they're not opposites.</p>
+            <span class="rule" style="opacity:.2"></span>
+            <p class="wi-ar-p">أبني سير عمل منهجية تُسرّع التسليم دون التفريط في الدقة. سريع وموثوق — الاثنان ليسا متناقضين.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="why-box fu">
+        <span class="why-box-num">100%</span>
+        <div class="why-box-label-en">Delivery Accuracy</div>
+        <div class="why-box-label-ar">دقة في التسليم</div>
+
+        <div class="skill-bar">
+          <div class="sb-label"><span>Excel / Google Sheets</span><span>95%</span></div>
+          <div class="sb-track"><div class="sb-fill" style="width:95%"></div></div>
+        </div>
+        <div class="skill-bar" style="margin-top:.9rem">
+          <div class="sb-label"><span>Data Entry Speed & Accuracy</span><span>100%</span></div>
+          <div class="sb-track"><div class="sb-fill" style="width:100%"></div></div>
+        </div>
+        <div class="skill-bar" style="margin-top:.9rem">
+          <div class="sb-label"><span>Content Management (CMS/Notion)</span><span>90%</span></div>
+          <div class="sb-track"><div class="sb-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill-bar" style="margin-top:.9rem">
+          <div class="sb-label"><span>Research & Documentation</span><span>92%</span></div>
+          <div class="sb-track"><div class="sb-fill" style="width:92%"></div></div>
+        </div>
+        <div class="skill-bar" style="margin-top:.9rem">
+          <div class="sb-label"><span>Client Communication</span><span>100%</span></div>
+          <div class="sb-track"><div class="sb-fill" style="width:100%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PORTFOLIO ════════ -->
+<section id="portfolio" class="section alt">
+  <div class="section-inner">
+    <div class="sh fu">
+      <div class="sh-tag">Portfolio · أعمالي</div>
+      <div class="sh-title-en">Selected Work Samples</div>
+      <span class="rule"></span>
+      <div class="sh-title-ar">نماذج من الأعمال المختارة</div>
+      <div class="sh-desc-pair">
+        <div class="sh-desc-en">Three representative projects demonstrating precision, speed, and systematic methodology across different data challenges.</div>
+        <div class="sh-desc-ar">ثلاثة مشاريع تمثيلية توضّح الدقة والسرعة والمنهجية عبر تحديات بيانات مختلفة.</div>
+      </div>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <div class="pcard fu">
+        <div class="pcard-thumb navy">
+          <span>📋</span>
+          <div class="pcard-thumb-label">Data Ops</div>
+        </div>
+        <div class="pcard-body">
+          <div class="pc-tag">Data Cleaning · تنقية البيانات</div>
+          <div class="pc-title-en">E-Commerce Product Database</div>
+          <span class="rule"></span>
+          <div class="pc-title-ar">قاعدة بيانات منتجات التجارة الإلكترونية</div>
+          <div class="pc-desc-en">Cleaned and standardised 4,800+ product records across 12 categories — removing duplicates, fixing formatting inconsistencies, and validating SKU codes.</div>
+          <span class="rule"></span>
+          <div class="pc-desc-ar">تنقية وتوحيد أكثر من 4800 سجل منتج عبر 12 فئة — إزالة التكرار وإصلاح التنسيق والتحقق من رموز SKU.</div>
+          <div class="pc-pills">
+            <span class="pc-pill">Excel</span>
+            <span class="pc-pill">Deduplication</span>
+            <span class="pc-pill">SKU Validation</span>
+            <span class="pc-pill">4,800 Records</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard fu">
+        <div class="pcard-thumb gold">
+          <span>📊</span>
+          <div class="pcard-thumb-label">CRM Ops</div>
+        </div>
+        <div class="pcard-body">
+          <div class="pc-tag">CRM Entry · إدخال CRM</div>
+          <div class="pc-title-en">Client Database Migration</div>
+          <span class="rule"></span>
+          <div class="pc-title-ar">نقل قاعدة بيانات العملاء</div>
+          <div class="pc-desc-en">Migrated 2,200 client records from spreadsheets into a CRM system with full data integrity, categorisation, and custom field mapping.</div>
+          <span class="rule"></span>
+          <div class="pc-desc-ar">نقل 2200 سجل عميل من الجداول إلى نظام CRM مع ضمان سلامة البيانات والتصنيف ورسم الحقول المخصصة.</div>
+          <div class="pc-pills">
+            <span class="pc-pill">CRM</span>
+            <span class="pc-pill">Data Migration</span>
+            <span class="pc-pill">Airtable</span>
+            <span class="pc-pill">2,200 Records</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard fu">
+        <div class="pcard-thumb light">
+          <span style="font-size:2.5rem">📑</span>
+          <div class="pcard-thumb-label">Content Ops</div>
+        </div>
+        <div class="pcard-body">
+          <div class="pc-tag">Content Management · إدارة المحتوى</div>
+          <div class="pc-title-en">Digital Content Calendar System</div>
+          <span class="rule"></span>
+          <div class="pc-title-ar">نظام تقويم المحتوى الرقمي</div>
+          <div class="pc-desc-en">Built and maintained a 6-month content calendar in Notion for a multi-platform brand — including scheduling, tagging, status tracking, and reporting.</div>
+          <span class="rule"></span>
+          <div class="pc-desc-ar">بناء وإدارة تقويم محتوى لمدة 6 أشهر في Notion لعلامة تجارية متعددة المنصات — بما في ذلك الجدولة والوسوم والتتبع والتقارير.</div>
+          <div class="pc-pills">
+            <span class="pc-pill">Notion</span>
+            <span class="pc-pill">Content Calendar</span>
+            <span class="pc-pill">Scheduling</span>
+            <span class="pc-pill">6 Months</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════ TESTIMONIALS ════════ -->
+<section id="testimonials" class="section">
+  <div class="section-inner">
+    <div class="sh fu">
+      <div class="sh-tag">Testimonials · آراء العملاء</div>
+      <div class="sh-title-en">What Clients Say</div>
+      <span class="rule"></span>
+      <div class="sh-title-ar">ماذا يقول العملاء</div>
+    </div>
+
+    <div class="tgrid">
+
+      <div class="tcard fu">
+        <div class="tcard-quote">"</div>
+        <p class="tc-en">Menna's attention to detail is extraordinary. She cleaned our entire product database with zero errors — something we hadn't managed in years.</p>
+        <p class="tc-ar">دقة منة في التفاصيل استثنائية. نظّفت قاعدة بيانات منتجاتنا بالكامل دون أخطاء — شيء لم نتمكن منه لسنوات.</p>
+        <div class="tc-author">
+          <div class="tc-avatar">SM</div>
+          <div>
+            <div class="tc-name-en">Sarah M.</div>
+            <div class="tc-role-en">E-COMMERCE MANAGER</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard fu">
+        <div class="tcard-quote">"</div>
+        <p class="tc-en">Reliable, fast, and communicates proactively. The CRM migration was completed ahead of schedule with full integrity. Highly recommend.</p>
+        <p class="tc-ar">موثوقة وسريعة وتتواصل باستباقية. أُنجز نقل CRM قبل الموعد بسلامة كاملة. أوصي بها بشدة.</p>
+        <div class="tc-author">
+          <div class="tc-avatar">AK</div>
+          <div>
+            <div class="tc-name-en">Ahmed K.</div>
+            <div class="tc-role-en">STARTUP FOUNDER</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard fu">
+        <div class="tcard-quote">"</div>
+        <p class="tc-en">The Notion content system she built transformed how our team operates. Clear, logical, and easy to maintain. Exactly what we needed.</p>
+        <p class="tc-ar">نظام Notion الذي بنته غيّر طريقة عمل فريقنا. واضح ومنطقي وسهل الصيانة. بالضبط ما كنا نحتاجه.</p>
+        <div class="tc-author">
+          <div class="tc-avatar">LR</div>
+          <div>
+            <div class="tc-name-en">Layla R.</div>
+            <div class="tc-role-en">CONTENT DIRECTOR</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════ RESUME ════════ -->
+<section id="resume" class="section alt">
+  <div class="section-inner">
+    <div class="sh fu">
+      <div class="sh-tag">Resume · السيرة الذاتية</div>
+      <div class="sh-title-en">Academic & Professional Background</div>
+      <span class="rule"></span>
+      <div class="sh-title-ar">الخلفية الأكاديمية والمهنية</div>
+    </div>
+
+    <div class="resume-layout">
+
+      <!-- LEFT COLUMN -->
+      <div class="fu">
+        <div class="profile-block">
+          <div class="pb-avatar">MB</div>
+          <div class="pb-name-en">Menna Bakir</div>
+          <div class="pb-name-ar">منة بكير</div>
+          <div class="pb-title-en">Data Entry Specialist</div>
+          <div class="pb-title-ar">أخصائية إدخال البيانات</div>
+        </div>
+
+        <div class="rv-label">Contact · تواصل</div>
+        <div class="contact-info-list">
+          <div class="ci-item">
+            <div class="ci-icon">✉</div>
+            <div>
+              <div class="ci-lbl">Email</div>
+              <a href="mailto:Mennabakeer24@gmail.com">
+                <div class="ci-val">Mennabakeer24@gmail.com</div>
+              </a>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon">in</div>
+            <div>
+              <div class="ci-lbl">LinkedIn</div>
+              <a href="https://www.linkedin.com/in/menna-bakir-0a8465169" target="_blank">
+                <div class="ci-val">linkedin.com/in/menna-bakir-0a8465169</div>
+              </a>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon">🌍</div>
+            <div>
+              <div class="ci-lbl">Location</div>
+              <div class="ci-val">Cairo, Egypt · القاهرة، مصر</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rv-label">Skills · المهارات</div>
+        <div class="skills-block">
+          <div class="skill-item">
+            <div class="skill-top"><span>Excel / Google Sheets</span><span>95%</span></div>
+            <div class="s-track"><div class="s-fill" style="width:95%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top"><span>Data Accuracy & QC</span><span>100%</span></div>
+            <div class="s-track"><div class="s-fill" style="width:100%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top"><span>Notion / Airtable</span><span>88%</span></div>
+            <div class="s-track"><div class="s-fill" style="width:88%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top"><span>Research & Analysis</span><span>90%</span></div>
+            <div class="s-track"><div class="s-fill" style="width:90%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top"><span>Arabic / English · عربي/إنجليزي</span><span>Native</span></div>
+            <div class="s-track"><div class="s-fill" style="width:100%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN — Timeline -->
+      <div class="fu">
+        <div class="rv-label">Education · التعليم</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-period">2019 – 2023</div>
+            <div class="tl-body">
+              <div style="display:flex;align-items:flex-start;gap:.8rem">
+                <div class="tl-dot" style="margin-top:.35rem"></div>
+                <div>
+                  <div class="tl-title-en">Bachelor's Degree in Business Administration</div>
+                  <span class="rule"></span>
+                  <div class="tl-title-ar">بكالوريوس إدارة أعمال</div>
+                  <div class="tl-org">Faculty of Commerce, Ain Shams University · كلية التجارة، جامعة عين شمس</div>
+                  <div class="tl-desc-en">Comprehensive academic background in business management, accounting principles, organisational behaviour, and analytical decision-making.</div>
+                  <span class="rule"></span>
+                  <div class="tl-desc-ar">خلفية أكاديمية شاملة في إدارة الأعمال ومبادئ المحاسبة والسلوك التنظيمي واتخاذ القرارات التحليلية.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rv-label" style="margin-top:2rem">Experience · الخبرات</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-period">2024 – Present</div>
+            <div class="tl-body">
+              <div style="display:flex;align-items:flex-start;gap:.8rem">
+                <div class="tl-dot" style="margin-top:.35rem"></div>
+                <div>
+                  <div class="tl-title-en">Freelance Data Entry Specialist</div>
+                  <span class="rule"></span>
+                  <div class="tl-title-ar">أخصائية إدخال بيانات مستقلة</div>
+                  <div class="tl-org">Self-Employed · عمل حر</div>
+                  <div class="tl-desc-en">Delivering data organisation, content management, and CRM operations for clients across multiple industries. Zero defect rate maintained across all projects.</div>
+                  <span class="rule"></span>
+                  <div class="tl-desc-ar">تقديم خدمات تنظيم البيانات وإدارة المحتوى وعمليات CRM للعملاء عبر صناعات متعددة مع الحفاظ على معدل صفر أخطاء.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rv-label" style="margin-top:2rem">Tools & Platforms · الأدوات</div>
+        <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+          <span class="pc-pill" style="background:var(--white)">Microsoft Excel</span>
+          <span class="pc-pill" style="background:var(--white)">Google Sheets</span>
+          <span class="pc-pill" style="background:var(--white)">Notion</span>
+          <span class="pc-pill" style="background:var(--white)">Airtable</span>
+          <span class="pc-pill" style="background:var(--white)">Google Docs</span>
+          <span class="pc-pill" style="background:var(--white)">WordPress</span>
+          <span class="pc-pill" style="background:var(--white)">Trello</span>
+          <span class="pc-pill" style="background:var(--white)">CRM Systems</span>
+          <span class="pc-pill" style="background:var(--white)">MS Office Suite</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CONTACT ════════ -->
+<section id="contact" class="section">
+  <div class="section-inner">
+    <div class="sh fu">
+      <div class="sh-tag">Contact · تواصل</div>
+      <div class="sh-title-en">Let's Work Together</div>
+      <span class="rule" style="opacity:.25"></span>
+      <div class="sh-title-ar">لنعمل معاً</div>
+      <div class="sh-desc-pair">
+        <div class="sh-desc-en">Ready to start a project? Reach out via any channel and I'll respond within 24 hours — guaranteed.</div>
+        <div class="sh-desc-ar">مستعدة لبدء مشروع؟ تواصلي عبر أي قناة وسأرد خلال 24 ساعة — مضمون.</div>
+      </div>
+    </div>
+
+    <div class="contact-layout">
+
+      <!-- Channels -->
+      <div class="fu">
+        <div class="contact-channels">
+          <a href="mailto:Mennabakeer24@gmail.com" class="channel-card">
+            <div class="ch-icon">✉</div>
+            <div>
+              <span class="ch-label-en">Email · البريد الإلكتروني</span>
+              <span class="ch-val">Mennabakeer24@gmail.com</span>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/menna-bakir-0a8465169" target="_blank" class="channel-card">
+            <div class="ch-icon" style="font-size:.85rem;font-family:var(--mono);font-weight:700;color:var(--gold2)">in</div>
+            <div>
+              <span class="ch-label-en">LinkedIn Profile</span>
+              <span class="ch-label-ar">الملف الشخصي</span>
+              <span class="ch-val">linkedin.com/in/menna-bakir-0a8465169</span>
+            </div>
+          </a>
+          <a href="mailto:Mennabakeer24@gmail.com?subject=Hiring%20Inquiry" class="channel-card">
+            <div class="ch-icon">💼</div>
+            <div>
+              <span class="ch-label-en">Hire Me Directly · وظّفني مباشرة</span>
+              <span class="ch-val">Send a hiring inquiry</span>
+            </div>
+          </a>
+        </div>
+
+        <div style="margin-top:2rem;padding:1.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius)">
+          <div style="font-family:var(--mono);font-size:.62rem;color:var(--gold);letter-spacing:.18em;margin-bottom:.6rem">AVAILABILITY · التوافر</div>
+          <div style="font-family:var(--serif);font-size:1.3rem;color:var(--white)">Available Now</div>
+          <div style="font-family:var(--sans);font-size:.85rem;color:rgba(255,255,255,.45);direction:rtl;text-align:right">متاحة الآن</div>
+          <div style="margin-top:.8rem;font-size:.75rem;color:rgba(255,255,255,.35)">Response within 24 hours · الرد خلال 24 ساعة</div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <form class="cform fu" onsubmit="handleForm(event)">
+        <div class="cform-row">
+          <div class="cform-group">
+            <label>Name · الاسم</label>
+            <input type="text" placeholder="Your name" required/>
+          </div>
+          <div class="cform-group">
+            <label>Email · البريد</label>
+            <input type="email" placeholder="email@example.com" required/>
+          </div>
+        </div>
+        <div class="cform-group">
+          <label>Service · الخدمة المطلوبة</label>
+          <select>
+            <option value="">Select a service · اختر الخدمة</option>
+            <option>Data Entry · إدخال البيانات</option>
+            <option>Data Cleaning · تنقية البيانات</option>
+            <option>Content Management · إدارة المحتوى</option>
+            <option>Research · البحث والتوثيق</option>
+            <option>CRM Operations · عمليات CRM</option>
+            <option>Custom Project · مشروع مخصص</option>
+          </select>
+        </div>
+        <div class="cform-group">
+          <label>Budget Range · النطاق الميزاني (Optional)</label>
+          <select>
+            <option value="">Prefer not to say</option>
+            <option>Under $50</option>
+            <option>$50 – $150</option>
+            <option>$150 – $500</option>
+            <option>$500+</option>
+          </select>
+        </div>
+        <div class="cform-group">
+          <label>Project Details · تفاصيل المشروع</label>
+          <textarea placeholder="Tell me about your project — data size, deadline, tools you use... / أخبرني عن مشروعك — حجم البيانات، الموعد النهائي، الأدوات المستخدمة..." required></textarea>
+        </div>
+        <button type="submit" class="cform-submit">Send Message · إرسال الرسالة →</button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="fb-name">Menna Bakir</div>
+      <div class="fb-ar">منة بكير</div>
+      <div class="fb-desc">Data Entry Specialist & Digital Content Manager — Cairo, Egypt</div>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-nav-title">Quick Links · روابط سريعة</div>
+      <a href="#services">Services · الخدمات</a>
+      <a href="#why">Why Me · لماذا أنا</a>
+      <a href="#portfolio">Portfolio · أعمالي</a>
+      <a href="#resume">Resume · السيرة</a>
+      <a href="#contact">Contact · تواصل</a>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-nav-title">Connect · تواصل</div>
+      <a href="mailto:Mennabakeer24@gmail.com">✉ Email</a>
+      <a href="https://www.linkedin.com/in/menna-bakir-0a8465169" target="_blank">in LinkedIn</a>
+      <a href="mailto:Mennabakeer24@gmail.com?subject=Hire%20Inquiry">💼 Hire Me · وظّفني</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Menna Bakir. All rights reserved.</div>
+    <div class="footer-copy-ar">جميع الحقوق محفوظة · منة بكير ٢٠٢٥</div>
+  </div>
+</footer>
+
+<!-- ════════ JAVASCRIPT ════════ -->
+<script>
+/* ── NAV SCROLL ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('solid', window.scrollY > 60);
+});
+
+/* ── MOBILE MENU ── */
+function openMob() { document.getElementById('mobMenu').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeMob() { document.getElementById('mobMenu').classList.remove('open'); document.body.style.overflow = ''; }
+
+/* ── SMOOTH SCROLL ── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const offset = 80;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+      closeMob();
+    }
+  });
+});
+
+/* ── FADE UP OBSERVER ── */
+const fus = document.querySelectorAll('.fu');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('vis'), i * 70);
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+fus.forEach(el => obs.observe(el));
+
+/* ── FORM ── */
+function handleForm(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.cform-submit');
+  const orig = btn.textContent;
+  btn.textContent = '✓ Message Sent · تم الإرسال';
+  btn.style.background = '#3a8a5a';
+  setTimeout(() => {
+    btn.textContent = orig;
+    btn.style.background = '';
+    e.target.reset();
+  }, 3500);
+}
+
+/* ── ACTIVE NAV LINK on scroll ── */
+const sections = document.querySelectorAll('section[id], header[id]');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.style.color = '';
+    if (a.getAttribute('href') === `#${current}`) a.style.color = 'var(--gold)';
+  });
+}, { passive: true });
+</script>
 </body>
 </html>
